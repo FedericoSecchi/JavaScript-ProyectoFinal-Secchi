@@ -130,7 +130,7 @@ select {
     font-size: 20px;
     color: black !important;
     border: none;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .modal-carrito #btn-cerrar-carrito:hover {
