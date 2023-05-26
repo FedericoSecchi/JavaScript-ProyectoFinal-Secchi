@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tienda de Kites</title>
+  <!-- Enlaces a fuentes y estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="./public/css/style.css"> <!-- Archivo de estilo personalizado -->
+
 </head>
+
 <body>
   <header>
     <h1>Tienda de Kites</h1>
     <button id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span id="contador-carrito">0</span></button>
+    <!-- Botón que muestra el carrito de compras y un contador para la cantidad de productos en el carrito -->
   </header>
   <main id="producto-contenedor">
+    <!-- Contenedor principal para mostrar los productos -->
   </main>
   <div class="modal-contenedor">
+    <!-- Contenedor del modal del carrito -->
     <div class="modal-carrito">
+      <!-- Contenido del modal del carrito -->
       <h3>Carrito</h3>
       <button id="btn-cerrar-carrito"><i class="fas fa-times-circle"></i></button>
+      <!-- Botón para cerrar el carrito -->
       <div id="carrito-contenedor">
       </div>
+      <!-- Contenedor donde se mostrarán los productos agregados al carrito -->
       <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+      <!-- Precio total de los productos en el carrito -->
       <table>
         <thead>
           <tr>
@@ -36,16 +47,22 @@
           </tr>
         </thead>
         <tbody id="tabla-carrito"></tbody>
+        <!-- Tabla para mostrar los productos en el carrito -->
       </table>
-      <button id="vaciar-carrito">Vaciar carrito</button> <!-- Nuevo botón para vaciar el carrito -->
+      <button id="vaciar-carrito">Vaciar carrito</button>
+      <!-- Botón para vaciar el carrito -->
     </div>
+    <!-- Fin del modal del carrito -->
+    <!-- Scripts de JavaScript -->
     <script src="./js/fetch.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/home.js"></script>
     <script src="./js/index.js"></script>
+    <!-- Enlace al kit de iconos de FontAwesome -->
     <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <!-- Enlace a la librería Toastify para mostrar notificaciones -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-  </body>
-  </html>
-  
+</body>
+
+</html>

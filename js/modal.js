@@ -1,31 +1,31 @@
-// Seleccionamos el elemento HTML que contiene el modal del carrito
+// Seleccionar el contenedor del modal
 const modalContenedor = document.querySelector('.modal-contenedor');
 
-// Seleccionamos el botón que abre el carrito
+// Seleccionar el botón de abrir el carrito
 const abrirCarrito = document.getElementById('cesta-carrito');
 
-// Seleccionamos el botón que cierra el carrito
+// Seleccionar el botón de cerrar el carrito
 const cerrarCarrito = document.getElementById('btn-cerrar-carrito');
 
-// Añadimos un event listener al botón abrir carrito que togglea la clase 'modal-active'
-// en el contenedor del modal, lo que muestra o esconde el modal
+// Agregar un evento de clic al botón de abrir el carrito
 abrirCarrito.addEventListener('click', () => modalContenedor.classList.toggle('modal-active'));
 
-// Añadimos un event listener al botón cerrar carrito que togglea la clase 'modal-active'
-// en el contenedor del modal, lo que muestra o esconde el modal
+// Agregar un evento de clic al botón de cerrar el carrito
 cerrarCarrito.addEventListener('click', () => modalContenedor.classList.toggle('modal-active'));
 
-// Añadimos un event listener al contenedor del modal que, cuando se haga click en cualquier parte
-// del mismo, ejecutará el evento click en el botón cerrar carrito, lo que cerrará el modal
+// Agregar un evento de clic al contenedor del modal
 modalContenedor.addEventListener('click', () => cerrarCarrito.click());
 
-// Añadimos un event listener al contenedor de la lista de productos del carrito que, cuando se haga click
-// en cualquier elemento con la clase 'boton-eliminar', llamará a la función eliminarProductoCarrito con
-// el valor del atributo 'value' del botón como argumento
+// Agregar un evento de clic a los elementos dentro del modal del carrito
 document.querySelector('.modal-carrito').addEventListener('click', (e) => {
+    // Evitar que el evento de clic se propague hacia los elementos padre
     e.stopPropagation();
+
+    // Verificar si el elemento clickeado contiene la clase "boton-eliminar"
     if (e.target.classList.contains('boton-eliminar')) {
-        console.log(e.target.dataset)
+        // Obtener el atributo "data-id" del elemento clickeado
+        console.log(e.target.dataset);
+        // Llamar a la función eliminarProductoCarrito con el ID obtenido
         eliminarProductoCarrito(e.target.dataset.id);
     }
 });

@@ -1,10 +1,18 @@
+// Función asincrónica para mostrar los productos en el contenedor
 const pintarProductos = async () => {
-    const data = await productosdisponibles()
+    // Se llama a la función productosdisponibles para obtener los datos de los productos
+    const data = await productosdisponibles();
+    
+    // Se obtiene el contenedor donde se mostrarán los productos en el DOM
     const contenedor = document.getElementById("producto-contenedor");
 
+    // Se itera sobre cada producto en la data obtenida
     data.forEach(producto => {
+        // Se crea un elemento div para representar cada producto
         const div = document.createElement('div');
         div.classList.add('card');
+        
+        // Se agrega el contenido HTML al div, utilizando los datos del producto
         div.innerHTML += `<div class="card-image">
                           <img src=${producto.imagen}>
                           <span class="card-title">${producto.nombre}</span>
@@ -19,6 +27,8 @@ const pintarProductos = async () => {
                             <p>Marca: ${producto.marca}</p>
                         </div>
                        `;
+        
+        // Se agrega el div al contenedor en el DOM
         contenedor.appendChild(div);
     });
 };
